@@ -182,6 +182,10 @@ def get_songs(emotion, genres, tempo, length, orderBy):
 
     def filter_genre(genre):
         genre_list = [g.strip() for g in genre.split(',')]
+        if 'hip hop' in genre:
+            genre_list.append('hip-hop')
+        elif 'hip-hop' in genre:
+            genre_list.append('hip-hop')
         for g in genre_list:
             if g in genres:
                 return True
