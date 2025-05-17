@@ -189,7 +189,7 @@ def get_songs(emotion, genres, tempo, length, orderBy):
     df['TempoDiff'] = (df['Tempo'] - tempo).abs()
     popularity = {
         'Popularity':85,
-        'Random':60
+        'Random': 0,
     }
     res = df[(df['Genre'].apply(filter_genre)) & (df[emotion] < 150) & (df['Popularity'] > popularity[orderBy])].sort_values(by=[emotion, 'TempoDiff'], ascending=[True, True]).sample(frac=1).head(length)[['Artist(s)', 'song']]
     print(res)
