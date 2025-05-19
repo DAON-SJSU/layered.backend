@@ -18,16 +18,7 @@ emotion_feature_map = {
         "Speechiness": 30,
         "Liveness": 60,
         "Acousticness": 10,
-        "Instrumentalness": 20,
-        "Good for Party": 1,
-        "Good for Work/Study": 0,
-        "Good for Relaxation/Meditation": 0,
-        "Good for Exercise": 1,
-        "Good for Running": 1,
-        "Good for Yoga/Stretching": 0,
-        "Good for Driving": 0,
-        "Good for Social Gatherings": 1,
-        "Good for Morning Routine": 0
+        "Instrumentalness": 20
     },
     "Love": {
         "Energy": 60,
@@ -36,16 +27,7 @@ emotion_feature_map = {
         "Speechiness": 40,
         "Liveness": 50,
         "Acousticness": 30,
-        "Instrumentalness": 20,
-        "Good for Party": 1,
-        "Good for Work/Study": 0,
-        "Good for Relaxation/Meditation": 1,
-        "Good for Exercise": 0,
-        "Good for Running": 0,
-        "Good for Yoga/Stretching": 0,
-        "Good for Driving": 1,
-        "Good for Social Gatherings": 1,
-        "Good for Morning Routine": 0
+        "Instrumentalness": 20
     },
     "Hope": {
         "Energy": 70,
@@ -54,16 +36,7 @@ emotion_feature_map = {
         "Speechiness": 30,
         "Liveness": 40,
         "Acousticness": 40,
-        "Instrumentalness": 30,
-        "Good for Party": 0,
-        "Good for Work/Study": 1,
-        "Good for Relaxation/Meditation": 1,
-        "Good for Exercise": 0,
-        "Good for Running": 0,
-        "Good for Yoga/Stretching": 0,
-        "Good for Driving": 0,
-        "Good for Social Gatherings": 0,
-        "Good for Morning Routine": 1
+        "Instrumentalness": 30
     },
     "Excitement": {
         "Energy": 95,
@@ -72,16 +45,7 @@ emotion_feature_map = {
         "Speechiness": 40,
         "Liveness": 70,
         "Acousticness": 10,
-        "Instrumentalness": 10,
-        "Good for Party": 1,
-        "Good for Work/Study": 0,
-        "Good for Relaxation/Meditation": 0,
-        "Good for Exercise": 1,
-        "Good for Running": 1,
-        "Good for Yoga/Stretching": 0,
-        "Good for Driving": 0,
-        "Good for Social Gatherings": 1,
-        "Good for Morning Routine": 0
+        "Instrumentalness": 10
     },
     "Calmness": {
         "Energy": 20,
@@ -90,16 +54,7 @@ emotion_feature_map = {
         "Speechiness": 20,
         "Liveness": 30,
         "Acousticness": 90,
-        "Instrumentalness": 80,
-        "Good for Party": 0,
-        "Good for Work/Study": 1,
-        "Good for Relaxation/Meditation": 1,
-        "Good for Exercise": 0,
-        "Good for Running": 0,
-        "Good for Yoga/Stretching": 1,
-        "Good for Driving": 0,
-        "Good for Social Gatherings": 0,
-        "Good for Morning Routine": 1
+        "Instrumentalness": 80
     },
     "Sadness": {
         "Energy": 20,
@@ -108,16 +63,7 @@ emotion_feature_map = {
         "Speechiness": 30,
         "Liveness": 30,
         "Acousticness": 80,
-        "Instrumentalness": 70,
-        "Good for Party": 0,
-        "Good for Work/Study": 0,
-        "Good for Relaxation/Meditation": 1,
-        "Good for Exercise": 0,
-        "Good for Running": 0,
-        "Good for Yoga/Stretching": 1,
-        "Good for Driving": 0,
-        "Good for Social Gatherings": 0,
-        "Good for Morning Routine": 0
+        "Instrumentalness": 70
     },
     "Loneliness": {
         "Energy": 30,
@@ -126,16 +72,7 @@ emotion_feature_map = {
         "Speechiness": 60,
         "Liveness": 40,
         "Acousticness": 70,
-        "Instrumentalness": 60,
-        "Good for Party": 0,
-        "Good for Work/Study": 0,
-        "Good for Relaxation/Meditation": 1,
-        "Good for Exercise": 0,
-        "Good for Running": 0,
-        "Good for Yoga/Stretching": 0,
-        "Good for Driving": 1,
-        "Good for Social Gatherings": 0,
-        "Good for Morning Routine": 0
+        "Instrumentalness": 60
     },
     "Dreamy": {
         "Energy": 40,
@@ -144,19 +81,10 @@ emotion_feature_map = {
         "Speechiness": 30,
         "Liveness": 30,
         "Acousticness": 85,
-        "Instrumentalness": 90,
-        "Good for Party": 0,
-        "Good for Work/Study": 1,
-        "Good for Relaxation/Meditation": 1,
-        "Good for Exercise": 0,
-        "Good for Running": 0,
-        "Good for Yoga/Stretching": 1,
-        "Good for Driving": 0,
-        "Good for Social Gatherings": 0,
-        "Good for Morning Routine": 1
+        "Instrumentalness": 90
     }
 }
-features = ['Energy','Danceability','Positiveness','Speechiness','Liveness','Acousticness','Instrumentalness','Good for Party','Good for Work/Study','Good for Relaxation/Meditation','Good for Exercise','Good for Running','Good for Yoga/Stretching','Good for Driving','Good for Social Gatherings','Good for Morning Routine']
+features = ['Energy','Danceability','Positiveness','Speechiness','Liveness','Acousticness','Instrumentalness']
 
 def calculate_emotion_distance(emotion, emotion_vector):
     return sum(abs(emotion_feature_map[emotion][k] - emotion_vector[k]) for k in features)
