@@ -74,7 +74,7 @@ emotion_feature_map = {
         "Acousticness": 70,
         "Instrumentalness": 60
     },
-    "Dreamy": {
+    "Dream": {
         "Energy": 40,
         "Danceability": 50,
         "Positiveness": 60,
@@ -94,7 +94,7 @@ df['Love'] = df.apply(lambda row: calculate_emotion_distance('Love', row), axis=
 df['Hope'] = df.apply(lambda row: calculate_emotion_distance('Hope', row), axis=1)
 df['Excitement'] = df.apply(lambda row: calculate_emotion_distance('Excitement', row), axis=1)
 df['Calmness'] = df.apply(lambda row: calculate_emotion_distance('Calmness', row), axis=1)
-df['Dreamy'] = df.apply(lambda row: calculate_emotion_distance('Dreamy', row), axis=1)
+df['Dream'] = df.apply(lambda row: calculate_emotion_distance('Dreamy', row), axis=1)
 df['Sadness'] = df.apply(lambda row: calculate_emotion_distance('Sadness', row), axis=1)
 df['Loneliness'] = df.apply(lambda row: calculate_emotion_distance('Loneliness', row), axis=1)
 
