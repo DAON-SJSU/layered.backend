@@ -94,7 +94,7 @@ df['Love'] = df.apply(lambda row: calculate_emotion_distance('Love', row), axis=
 df['Hope'] = df.apply(lambda row: calculate_emotion_distance('Hope', row), axis=1)
 df['Excitement'] = df.apply(lambda row: calculate_emotion_distance('Excitement', row), axis=1)
 df['Calmness'] = df.apply(lambda row: calculate_emotion_distance('Calmness', row), axis=1)
-df['Dream'] = df.apply(lambda row: calculate_emotion_distance('Dreamy', row), axis=1)
+df['Dream'] = df.apply(lambda row: calculate_emotion_distance('Dream', row), axis=1)
 df['Sadness'] = df.apply(lambda row: calculate_emotion_distance('Sadness', row), axis=1)
 df['Loneliness'] = df.apply(lambda row: calculate_emotion_distance('Loneliness', row), axis=1)
 
@@ -133,6 +133,7 @@ def get_youtube(artist, song):
     response['title'] = res['title']
     response['url'] = "youtube.com"+res['url_suffix']
     response['channel'] = res['channel']
+    response['thumbnail'] = res['thumbnail']
     response['duration'] = res['duration']
     response['views'] = res['views']
     response['publish_time'] = res['publish_time']
