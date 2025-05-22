@@ -133,7 +133,7 @@ def get_youtube(artist, song):
     response['title'] = res['title']
     response['url'] = "youtube.com"+res['url_suffix']
     response['channel'] = res['channel']
-    response['thumbnail'] = res['thumbnail']
+    response['thumbnail'] = res['thumbnails'][0]
     response['duration'] = res['duration']
     response['views'] = res['views']
     response['publish_time'] = res['publish_time']
@@ -151,4 +151,5 @@ def get_playlist(dto: Playlist):
     for song in songs:
         youtube = get_youtube(song['Artist(s)'], song['song'])
         result.append(youtube)
+        print(result)
     return result
