@@ -123,7 +123,8 @@ def get_songs(emotion, genres, tempo, length, orderBy):
         'Popularity':85,
         'Random': 0,
     }
-    res = df[(df['Genre'].apply(filter_genre)) & (df[emotion] < 140) & (df['Popularity'] > popularity[orderBy])].sort_values(by=[emotion, 'TempoDiff'], ascending=[True, True]).sample(frac=1).head(length)[['Artist(s)', 'song']]
+    df['TempSort'] = df['Genre'].apply(filter_genre)
+    res = df[(df[emotion] < 140) & (df['Popularity'] > popularity[orderBy])].sort_values(by=['TempSort', emotion, 'TempoDiff'], ascending=[False, True, True]).sample(frac=1).head(length)[['Artist(s)', 'song']]
     print(res)
     return res
 
@@ -151,5 +152,4 @@ def get_playlist(dto: Playlist):
     for song in songs:
         youtube = get_youtube(song['Artist(s)'], song['song'])
         result.append(youtube)
-        print(result)
     return result
